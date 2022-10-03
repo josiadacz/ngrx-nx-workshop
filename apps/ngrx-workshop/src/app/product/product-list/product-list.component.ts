@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable, shareReplay } from 'rxjs';
 
 import { BasicProduct, ProductRating } from '@ngrx-nx-workshop/api-interfaces';
 import { Store } from '@ngrx/store';
@@ -12,7 +12,7 @@ import { Dictionary } from '@ngrx/entity';
 @Component({
   selector: 'ngrx-nx-workshop-home',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.scss']
+  styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent {
   products$: Observable<BasicProduct[] | undefined> = this.store.select(

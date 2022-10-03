@@ -1,10 +1,6 @@
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppComponent } from './app.component';
-import { RoutingModule } from './router/routing.module';
-import { CartIconModule } from './cart/cart-icon/cart-icon.module';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -28,6 +24,6 @@ import { CartModule } from './cart/cart.module';
     ProductModule,
     StoreDevtoolsModule.instrument({ maxAge: 50 })
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

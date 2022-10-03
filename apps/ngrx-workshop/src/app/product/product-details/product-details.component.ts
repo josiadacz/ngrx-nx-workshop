@@ -11,7 +11,7 @@ import { Rating } from '@ngrx-nx-workshop/api-interfaces';
 @Component({
   selector: 'ngrx-nx-workshop-product-details',
   templateUrl: './product-details.component.html',
-  styleUrls: ['./product-details.component.scss']
+  styleUrls: ['./product-details.component.scss'],
 })
 export class ProductDetailsComponent {
   product$ = this.store.select(selectors.getCurrentProduct);
@@ -37,5 +37,21 @@ export class ProductDetailsComponent {
 
   back() {
     this.location.back();
+  }
+
+  submit(review: { reviewer: string; reviewText: string }) {
+    this.productId$
+      .pipe(
+        take(1),
+        concatMap((productId) =>
+          this.ratingService.postReview({
+            productId,
+            ...review,
+          })
+        )
+      )
+      .subscribe(() => {
+        this.reviewsRefresh$.next();
+      });
   }
 }

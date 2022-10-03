@@ -4,9 +4,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { RouterModule } from '@angular/router';
 
-import { ProductListComponent } from './product-list.component';
-import { StarsModule } from '../../common/stars/stars.module';
 import { SpinnerModule } from '../../common/spinner/spinner.module';
+import { StarsModule } from '../../common/stars/stars.module';
+import { ProductListComponent } from './product-list.component';
 
 @NgModule({
   imports: [
@@ -18,6 +18,6 @@ import { SpinnerModule } from '../../common/spinner/spinner.module';
     MatProgressBarModule
   ],
   declarations: [ProductListComponent],
-  exports: [ProductListComponent]
+  exports: [ProductListComponent],
 })
 export class ProductListModule {}

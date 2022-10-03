@@ -10,7 +10,7 @@ import * as selectors from '../selectors';
 @Component({
   selector: 'ngrx-nx-workshop-cart-details',
   templateUrl: './cart-details.component.html',
-  styleUrls: ['./cart-details.component.scss']
+  styleUrls: ['./cart-details.component.scss'],
 })
 export class CartDetailsComponent {
   cartDetailsVm$ = this.store.select(selectors.cartDetailsVm);

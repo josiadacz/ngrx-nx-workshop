@@ -7,7 +7,7 @@ import * as cartSelectors from '../selectors';
 @Component({
   selector: 'ngrx-nx-workshop-cart',
   templateUrl: './cart-icon.component.html',
-  styleUrls: ['./cart-icon.component.scss']
+  styleUrls: ['./cart-icon.component.scss'],
 })
 export class CartIconComponent {
   cartItemsCounter$ = this.store.select(cartSelectors.getCartItemsCount);
