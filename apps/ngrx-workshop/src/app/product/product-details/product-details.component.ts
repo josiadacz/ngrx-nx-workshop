@@ -8,6 +8,8 @@ import * as actions from './actions';
 import * as selectors from '../selectors';
 import { Rating } from '@ngrx-nx-workshop/api-interfaces';
 
+import * as actions from './actions';
+
 @Component({
   selector: 'ngrx-nx-workshop-product-details',
   templateUrl: './product-details.component.html',

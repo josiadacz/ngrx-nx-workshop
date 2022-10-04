@@ -4,6 +4,8 @@ import { Store } from '@ngrx/store';
 
 import * as cartSelectors from '../selectors';
 
+import * as cartSelectors from '../cart.selectors';
+
 @Component({
   selector: 'ngrx-nx-workshop-cart',
   templateUrl: './cart-icon.component.html',
