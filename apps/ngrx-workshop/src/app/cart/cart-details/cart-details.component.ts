@@ -7,14 +7,15 @@ import { Store } from '@ngrx/store';
 
 =======
 
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
 import { createSelector, Store } from '@ngrx/store';
 
 import { CartProduct } from '../../model/product';
 import { selectCartProducts, selectCartTotal } from '../cart.selectors';
+<<<<<<< HEAD
 import { CartService } from '../cart.service';
 >>>>>>> 52c6685 (m9: View Model)
+=======
+>>>>>>> f2088b3 (m14: Complete app)
 import * as actions from './actions';
 import * as selectors from '../selectors';
 
@@ -40,6 +41,7 @@ export class CartDetailsComponent {
     total?: number;
   }> = this.store.select(cartDetailsVm);
 
+<<<<<<< HEAD
   constructor(
     private readonly cartService: CartService,
     private readonly snackBar: MatSnackBar,
@@ -47,6 +49,9 @@ export class CartDetailsComponent {
     private readonly store: Store
   ) {
 >>>>>>> 52c6685 (m9: View Model)
+=======
+  constructor(private readonly store: Store) {
+>>>>>>> f2088b3 (m14: Complete app)
     this.store.dispatch(actions.pageOpened());
   }
 
