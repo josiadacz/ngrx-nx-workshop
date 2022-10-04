@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { CART_FEATURE_KEY, reducer } from './reducer';
 import { CartEffects } from './effects';
