@@ -9,8 +9,11 @@ export const addToCart = createAction(
 export const productDetailsOpened = createAction(
   '[Product Details Page] Opened'
 );
+<<<<<<< HEAD
 
 export const rateProduct = createAction(
   '[Product Details Page] product rated',
   props<ProductRating>()
 );
+=======
+>>>>>>> bf5c9ab (m8: Combining selectors)

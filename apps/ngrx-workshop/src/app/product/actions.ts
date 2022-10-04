@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+import { BasicProduct, Product } from '@ngrx-nx-workshop/api-interfaces';
+>>>>>>> bf5c9ab (m8: Combining selectors)
 import { createAction, props } from '@ngrx/store';
 import {
   BasicProduct,
@@ -49,4 +53,14 @@ export const rateProductSuccess = createAction(
 );
 export const rateProductError = createAction(
   '[Product API] rate product error'
+);
+
+export const singleProductFetchedSuccess = createAction(
+  '[Product API] single product fetched success',
+  props<{ product: Product }>()
+);
+
+export const singleProductFetchedError = createAction(
+  '[Product API] single product fetching error',
+  props<{ errorMessage: string }>()
 );
