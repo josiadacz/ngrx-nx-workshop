@@ -1,5 +1,6 @@
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
+<<<<<<< HEAD
 import { Observable } from 'rxjs';
 
 <<<<<<< HEAD
@@ -14,13 +15,20 @@ import { RatingService } from '../rating.service';
 >>>>>>> bf5c9ab (m8: Combining selectors)
 
 import * as actions from './actions';
+=======
+import { Rating } from '@ngrx-nx-workshop/api-interfaces';
+
+import { ProductDetailsStore } from './product-details.store';
+>>>>>>> 8937192 (m12: ComponentStore)
 
 @Component({
   selector: 'ngrx-nx-workshop-product-details',
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.scss'],
+  providers: [ProductDetailsStore],
 })
 export class ProductDetailsComponent {
+<<<<<<< HEAD
   product$ = this.store.select(selectors.getCurrentProduct);
 
 <<<<<<< HEAD
@@ -65,9 +73,17 @@ export class ProductDetailsComponent {
   setRating(id: string, rating: Rating) {
     this.store.dispatch(actions.rateProduct({ productId: id, rating }));
   }
+=======
+  readonly vm$ = this.productDetailsStore.vm$;
+
+  constructor(
+    private readonly location: Location,
+    private readonly productDetailsStore: ProductDetailsStore
+  ) {}
+>>>>>>> 8937192 (m12: ComponentStore)
 
   addToCart(productId: string) {
-    this.store.dispatch(actions.addToCart({ productId }));
+    this.productDetailsStore.addToCart(productId);
   }
 
   back() {
@@ -75,18 +91,10 @@ export class ProductDetailsComponent {
   }
 
   submit(review: { reviewer: string; reviewText: string }) {
-    this.productId$
-      .pipe(
-        take(1),
-        concatMap((productId) =>
-          this.ratingService.postReview({
-            productId,
-            ...review,
-          })
-        )
-      )
-      .subscribe(() => {
-        this.reviewsRefresh$.next();
-      });
+    this.productDetailsStore.postReview(review);
+  }
+
+  setRating(rating: Rating) {
+    this.productDetailsStore.setRating(rating);
   }
 }
