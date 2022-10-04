@@ -12,6 +12,14 @@ import { StoreModule } from '@ngrx/store';
 import { routerReducer, StoreRouterConnectingModule, RouterState } from '@ngrx/router-store';
 import { ROUTER_FEATURE_KEY } from './selectors';
 
+import {
+  routerReducer,
+  RouterState,
+  StoreRouterConnectingModule,
+} from '@ngrx/router-store';
+import { StoreModule } from '@ngrx/store';
+import { ROUTER_FEATURE_KEY } from './router.selectors';
+
 const routes: Routes = [
   { path: 'details/:productId', component: ProductDetailsComponent },
   { path: 'cart', component: CartDetailsComponent },
